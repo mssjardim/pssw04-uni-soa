@@ -67,4 +67,9 @@ public class LembrarWS {
     public boolean removeLembrete(@WebParam(name = "lembretes") Lembretes lembretes) {
         return bean.removeLembrete(lembretes);
     }
+
+    @WebMethod(operationName = "findLembreteById")
+    public Lembretes findLembreteById(@WebParam(name = "idlembrete") int idlembrete) {
+        return bean.findLembreteById(idlembrete);
+    }
 }

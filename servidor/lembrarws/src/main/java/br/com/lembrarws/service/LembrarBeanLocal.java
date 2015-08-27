@@ -34,4 +34,6 @@ public interface LembrarBeanLocal {
     boolean editLembrete(Lembretes lembretes);
 
     boolean removeLembrete(Lembretes lembretes);
+
+    Lembretes findLembreteById(int idlembrete);
 }

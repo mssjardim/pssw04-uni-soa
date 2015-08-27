@@ -70,4 +70,9 @@ public class LembrarBean implements LembrarBeanLocal {
         return lembretesController.removeLembrete(lembretes);
     }
 
+    @Override
+    public Lembretes findLembreteById(int idlembrete) {
+        return lembretesController.findLembretesById(idlembrete);
+    }
+
 }

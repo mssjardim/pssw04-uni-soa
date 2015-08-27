@@ -37,4 +37,8 @@ public class LembretesController {
         return lembretesFacadeLocal.remove(lembretes);
     }
 
+    public Lembretes findLembretesById(int idlembrete) {
+        return lembretesFacadeLocal.find(idlembrete);
+    }
+
 }
