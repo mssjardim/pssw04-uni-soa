@@ -6,6 +6,7 @@
 package br.com.lembrarws.model.facades;
 
 import br.com.lembrarws.model.entities.Lembretes;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,6 +28,13 @@ public class LembretesFacade extends AbstractFacade<Lembretes> implements Lembre
 
     public LembretesFacade() {
         super(Lembretes.class);
+    }
+
+    @Override
+    public List<Lembretes> listLembretesByIdusuario(int idusuario) {
+        return em.createQuery("SELECT t FROM Lembretes t WHERE t.idusuario.idusuario = :idusuario")
+                .setParameter("idusuario", idusuario)
+                .getResultList();
     }
 
 }

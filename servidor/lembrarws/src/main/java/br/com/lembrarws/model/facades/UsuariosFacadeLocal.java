@@ -16,11 +16,11 @@ import javax.ejb.Local;
 @Local
 public interface UsuariosFacadeLocal {
 
-    void create(Usuarios usuarios);
+    boolean create(Usuarios usuarios);
 
-    void edit(Usuarios usuarios);
+    boolean edit(Usuarios usuarios);
 
-    void remove(Usuarios usuarios);
+    boolean remove(Usuarios usuarios);
 
     Usuarios find(Object id);
 
@@ -29,7 +29,7 @@ public interface UsuariosFacadeLocal {
     List<Usuarios> findRange(int[] range);
 
     int count();
-    
+
     Usuarios findByEmail(String email);
-    
+
 }

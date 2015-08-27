@@ -33,11 +33,8 @@ public class UsuariosFacade extends AbstractFacade<Usuarios> implements Usuarios
     @Override
     public Usuarios findByEmail(String email) {
         Usuarios usuarios;
-//        usuarios.setIdusuario(1);
-//        usuarios.setEmail("santarelle@gmail.com");
-//        usuarios.setNome("Marco");
         try {
-            usuarios = (Usuarios) em.createNativeQuery("SELECT t.* FROM Usuarios t WHERE t.email = :email", Usuarios.class)
+            usuarios = em.createQuery("SELECT t FROM Usuarios t WHERE t.email = :email", Usuarios.class)
                     .setParameter("email", email)
                     .getSingleResult();
         } catch (NoResultException e) {

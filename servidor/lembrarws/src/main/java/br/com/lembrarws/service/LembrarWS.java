@@ -5,6 +5,7 @@
  */
 package br.com.lembrarws.service;
 
+import br.com.lembrarws.model.entities.Lembretes;
 import br.com.lembrarws.model.entities.Usuarios;
 import java.util.List;
 import javax.ejb.EJB;
@@ -22,9 +23,9 @@ public class LembrarWS {
     @EJB
     private LembrarBeanLocal bean;
 
-    @WebMethod(operationName = "bean")
-    public String bean(@WebParam(name = "str") String str) {
-        return bean.bean(str);
+    @WebMethod(operationName = "teste")
+    public String teste(@WebParam(name = "texto") String texto) {
+        return bean.teste(texto);
     }
 
     @WebMethod(operationName = "findUsuariosByEmail")
@@ -35,5 +36,35 @@ public class LembrarWS {
     @WebMethod(operationName = "listUsuarios")
     public List<Usuarios> listUsuarios() {
         return bean.listUsuarios();
+    }
+
+    @WebMethod(operationName = "createUsuario")
+    public boolean createUsuario(@WebParam(name = "usuario") Usuarios usuario) {
+        return bean.createUsuario(usuario);
+    }
+
+    @WebMethod(operationName = "editUsuario")
+    public boolean editUsuario(@WebParam(name = "usuario") Usuarios usuario) {
+        return bean.editUsuario(usuario);
+    }
+
+    @WebMethod(operationName = "listLembretesByIdusuario")
+    public List<Lembretes> listLembretesByIdusuario(@WebParam(name = "idusuario") int idusuario) {
+        return bean.listLembretesByIdusuario(idusuario);
+    }
+
+    @WebMethod(operationName = "createLembrete")
+    public boolean createLembrete(@WebParam(name = "lembretes") Lembretes lembretes) {
+        return bean.createLembrete(lembretes);
+    }
+
+    @WebMethod(operationName = "editLembrete")
+    public boolean editLembrete(@WebParam(name = "lembretes") Lembretes lembretes) {
+        return bean.editLembrete(lembretes);
+    }
+
+    @WebMethod(operationName = "removeLembrete")
+    public boolean removeLembrete(@WebParam(name = "lembretes") Lembretes lembretes) {
+        return bean.removeLembrete(lembretes);
     }
 }

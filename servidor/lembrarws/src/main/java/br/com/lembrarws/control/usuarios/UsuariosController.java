@@ -28,4 +28,12 @@ public class UsuariosController {
     public List<Usuarios> listUsuarios() {
         return usuariosFacadeLocal.findAll();
     }
+
+    public boolean createUsuario(Usuarios usuarios) {
+        return usuariosFacadeLocal.create(usuarios);
+    }
+
+    public boolean editUsuario(Usuarios usuarios) {
+        return usuariosFacadeLocal.create(usuarios);
+    }
 }

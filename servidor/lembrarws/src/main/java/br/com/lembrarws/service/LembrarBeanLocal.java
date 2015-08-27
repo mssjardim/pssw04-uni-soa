@@ -5,6 +5,7 @@
  */
 package br.com.lembrarws.service;
 
+import br.com.lembrarws.model.entities.Lembretes;
 import br.com.lembrarws.model.entities.Usuarios;
 import java.util.List;
 import javax.ejb.Local;
@@ -16,9 +17,21 @@ import javax.ejb.Local;
 @Local
 public interface LembrarBeanLocal {
 
-    String bean(String str);
+    String teste(String str);
 
     Usuarios findUsuariosByEmail(String email);
 
     List<Usuarios> listUsuarios();
+
+    boolean createUsuario(Usuarios usuario);
+
+    boolean editUsuario(Usuarios usuario);
+
+    List<Lembretes> listLembretesByIdusuario(int idusuario);
+
+    boolean createLembrete(Lembretes lembretes);
+
+    boolean editLembrete(Lembretes lembretes);
+
+    boolean removeLembrete(Lembretes lembretes);
 }

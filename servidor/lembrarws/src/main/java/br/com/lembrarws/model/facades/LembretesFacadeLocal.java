@@ -16,11 +16,11 @@ import javax.ejb.Local;
 @Local
 public interface LembretesFacadeLocal {
 
-    void create(Lembretes lembretes);
+    boolean create(Lembretes lembretes);
 
-    void edit(Lembretes lembretes);
+    boolean edit(Lembretes lembretes);
 
-    void remove(Lembretes lembretes);
+    boolean remove(Lembretes lembretes);
 
     Lembretes find(Object id);
 
@@ -29,5 +29,7 @@ public interface LembretesFacadeLocal {
     List<Lembretes> findRange(int[] range);
 
     int count();
-    
+
+    List<Lembretes> listLembretesByIdusuario(int idusuario);
+
 }
