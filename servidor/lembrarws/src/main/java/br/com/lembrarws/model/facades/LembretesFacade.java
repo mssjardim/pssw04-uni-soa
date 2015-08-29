@@ -32,7 +32,7 @@ public class LembretesFacade extends AbstractFacade<Lembretes> implements Lembre
 
     @Override
     public List<Lembretes> listLembretesByIdusuario(int idusuario) {
-        return em.createQuery("SELECT t FROM Lembretes t WHERE t.idusuario.idusuario = :idusuario")
+        return em.createQuery("SELECT t FROM Lembretes t WHERE t.idusuario.idusuario = :idusuario ORDER BY t.data DESC")
                 .setParameter("idusuario", idusuario)
                 .getResultList();
     }

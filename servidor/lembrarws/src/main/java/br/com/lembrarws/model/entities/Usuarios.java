@@ -49,6 +49,9 @@ public class Usuarios implements Serializable {
     @Size(max = 100)
     @Column(name = "email")
     private String email;
+    @Size(max = 13)
+    @Column(name = "celular")
+    private String celular;
     @OneToMany(mappedBy = "idusuario", fetch = FetchType.EAGER)
     private Set<Lembretes> lembretesSet;
 
@@ -115,6 +118,20 @@ public class Usuarios implements Serializable {
     @Override
     public String toString() {
         return "br.com.lembrarws.model.entities.Usuarios[ idusuario=" + idusuario + " ]";
+    }
+
+    /**
+     * @return the celular
+     */
+    public String getCelular() {
+        return celular;
+    }
+
+    /**
+     * @param celular the celular to set
+     */
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
 }

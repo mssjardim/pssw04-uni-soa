@@ -40,5 +40,9 @@ public class LembretesController {
     public Lembretes findLembretesById(int idlembrete) {
         return lembretesFacadeLocal.find(idlembrete);
     }
+    
+    public List<Lembretes> listLembretes() {
+        return lembretesFacadeLocal.findAll();
+    }
 
 }
